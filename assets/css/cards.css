@@ -1,0 +1,69 @@
+ 
+.main-part{
+    background: #fff;
+    padding: 6px 12px 12px 12px;
+    border-radius: 0.25rem;
+    box-shadow: 0px 0 2px #d3d3d3;
+}
+.cpanel{width: 100%;display: inline-block;background-color:#28a745;color:#fff;margin-top: 8px;/* min-height: 82px; */text-align: center;}
+
+small, .small{
+    font-size: 100%;
+    font-weight: 400;
+}
+
+.icon-part i{
+font-size: 30px;
+padding:10px;
+border:1px solid #fff;
+border-radius:50%;
+margin-top:-25px;
+margin-bottom: 10px;
+background-color:#34495E;
+}
+.icon-part p{margin:0px;font-size: 18px;padding-bottom: 10px;}
+.card-content-part{background-color: #228d3a;padding: 5px 0px;border-top: 1px solid #eeeeee36;}
+.cpanel .card-content-part:hover{
+background-color: #333;
+cursor: pointer;
+}
+.card-content-part a{
+color:#fff;
+text-decoration: none;
+}
+.cpanel-green .icon-part,.cpanel-green .icon-part i{background-color: slateblue;}
+.cpanel-green .card-content-part{background-color: #5b4cb4;}
+
+.cpanel-darkslateblue .icon-part,.cpanel-darkslateblue .icon-part i{background-color: var(--teal);}
+.cpanel-darkslateblue .card-content-part{background-color: #16a77c;}
+
+.cpanel-skycolo .icon-part,.cpanel-skycolo .icon-part i{background-color: 00bcd4;}
+.cpanel-skycolo .card-content-part{background-color: #0593a5;}
+
+
+.cpanel-orange .icon-part,.cpanel-orange .icon-part i{background-color: #8bc34a;}
+.cpanel-orange .card-content-part{background-color: #80b444;}
+.cpanel-blue .icon-part,.cpanel-blue .icon-part i{
+background-color: #2980B9;
+}
+.cpanel-blue .card-content-part{
+background-color:#2573A6;
+}
+.cpanel-red .icon-part,.cpanel-red .icon-part i{
+background-color:#E74C3C;
+}
+.cpanel-red .card-content-part{
+background-color:#CF4436;
+}
+.cpanel-skyblue .icon-part,.cpanel-skyblue .icon-part i{
+background-color:#8E44AD;
+}
+.cpanel-skyblue .card-content-part{
+background-color:#803D9B;
+}
+ 
+
+
+@media only screen and (max-width: 768px) {
+ .main-part{width:100%;}
+}

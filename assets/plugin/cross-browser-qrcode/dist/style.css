@@ -1,0 +1,7 @@
+#qrcode {
+  float:right;
+}
+
+ .qrcode img {
+    width: 90px;
+}

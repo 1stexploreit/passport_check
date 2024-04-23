@@ -1,0 +1,13 @@
+//sweetalert
+		echo '<script>
+    setTimeout(function() {
+        swal({
+            title: "Success!",
+            text: "fg",
+            type: "success"
+        }).then(function() {
+            window.location = "list_district.php";
+        });
+    }, 1000);
+</script>';
+//sweetalert end
