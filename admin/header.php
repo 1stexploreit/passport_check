@@ -80,30 +80,16 @@
 			   
                <a class="nav-link collapsed patient" href="#" data-toggle="collapse" data-target="#car" aria-expanded="false" aria-controls="collapseLayouts">
                   <div class="sb-nav-link-icon"><i class="fas fa-car"></i></div>
-                 Car  List
+                Passport Check
                   <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                </a>
                <div class="collapse" id="car" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                   <nav class="sb-sidenav-menu-nested nav">
-                     <a class="nav-link" href="add_car.php"> Add Car </a>
-                     <a class="nav-link" href="list_car.php"> All Cars   </a>
+                     <a class="nav-link" href="add_passport_check.php"> Add Passport Check </a>
+                     <a class="nav-link" href="list_passport_check.php"> All Passport Checks    </a>
                   </nav>
                </div>
 
-
-               <a class="nav-link collapsed patient" href="#" data-toggle="collapse" data-target="#Booking" aria-expanded="false" aria-controls="collapseLayouts">
-                  <div class="sb-nav-link-icon"><i class="fas fa-th"></i></div>
-                 Booking
-                  <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-               </a>
-               <div class="collapse" id="Booking" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                  <nav class="sb-sidenav-menu-nested nav">
-                     <a class="nav-link" href="list_order_new.php"> New Booking </a>
-                     <a class="nav-link" href="list_order_verified.php"> Verified Booking  </a>
-                  </nav>
-               </div>
-			   
-			   
 					 <a class="nav-link d-none" href="reports.php" ><div class="sb-nav-link-icon"><i class="fas fa-print"></i></div>Reports</a>
 			   
 			   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#setup" aria-expanded="true" aria-controls="collapseLayouts">
@@ -114,8 +100,8 @@
                <div class="collapse" id="setup" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                   <nav class="sb-sidenav-menu-nested nav">
 
-                     <a class="nav-link" href="list_location.php"> Location </a>
-                     <a class="nav-link" href="list_addons.php"> Addons </a>
+                     <a class="nav-link" href="list_status.php"> Status </a>
+                    
  
 				</nav>
 				  

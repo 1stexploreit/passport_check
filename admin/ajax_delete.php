@@ -3,38 +3,18 @@
  include('session.php');
 
 //delcontact  delete
-if($_POST['dellocation']!=""):
+if($_POST['delstatus']!=""):
     extract($_POST);
-    $sql = $conn->query("DELETE FROM tbl_location WHERE id='$dellocation' ");
-    $dellocation=mysqli_real_escape_string($conn,$appd);
+    $sql = $conn->query("DELETE FROM tbl_status WHERE id='$delstatus' ");
+    $delstatus=mysqli_real_escape_string($conn,$appd);
 endif;
 
-//delgroup  delete
-if($_POST['delgroup']!=""):
-    extract($_POST);
-    $sql = $conn->query("DELETE FROM tbl_group WHERE id='$delgroup' ");
-    $delgroup=mysqli_real_escape_string($conn,$appd);
-endif;
 
 //Csv  delete
-if($_POST['dellcsv']!=""):
+if($_POST['delpassport_check']!=""):
     extract($_POST);
-    $sql = $conn->query("DELETE FROM tbl_attendance WHERE csv_id='$dellcsv' ");
-    $dellcsv=mysqli_real_escape_string($conn,$appd);
-endif;
-
-//Csv  delete
-if($_POST['delcar']!=""):
-    extract($_POST);
-    $sql = $conn->query("DELETE FROM tbl_car WHERE id='$delcar' ");
-    $delcar=mysqli_real_escape_string($conn,$appd);
-endif;
-
-//Csv  delete
-if($_POST['deladdons']!=""):
-    extract($_POST);
-    $sql = $conn->query("DELETE FROM tbl_addons WHERE id='$deladdons' ");
-    $deladdons=mysqli_real_escape_string($conn,$appd);
+    $sql = $conn->query("DELETE FROM tbl_passport_check WHERE id='$delpassport_check' ");
+    $delpassport_check=mysqli_real_escape_string($conn,$appd);
 endif;
 
 

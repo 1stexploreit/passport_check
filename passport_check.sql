@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2024 at 09:25 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 7.4.30
+-- Generation Time: Apr 23, 2024 at 01:06 PM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,29 +19,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `car_rental`
+-- Database: `passport_check`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_addons`
---
-
-CREATE TABLE `tbl_addons` (
-  `id` int(11) NOT NULL,
-  `item` varchar(50) NOT NULL,
-  `charge` double NOT NULL,
-  `created` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_addons`
---
-
-INSERT INTO `tbl_addons` (`id`, `item`, `charge`, `created`) VALUES
-(1, 'Dash Cam\n', 250, '2024-03-09 14:39:31'),
-(2, 'Baby Car Seat\n', 250, '2024-03-09 14:39:31');
 
 -- --------------------------------------------------------
 
@@ -67,58 +47,6 @@ CREATE TABLE `tbl_admin` (
 
 INSERT INTO `tbl_admin` (`id`, `clientid`, `fullname`, `email`, `password`, `mobile`, `photo`, `role`, `status`, `created`) VALUES
 (1, 1, 'Admin', 'admin@admin.com', '$2y$10$/XZsL2iLtg8xk9oM/cUdpuBQkK3NIWtYnDpVT0BaKJurcyJNGF8pW', 1711596396, 'logo2023-11-07-01-29-51_65493eaf0d4d9.png', 0, 'Active', '2022-01-22 08:43:09');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_car`
---
-
-CREATE TABLE `tbl_car` (
-  `id` int(11) NOT NULL,
-  `brand` varchar(50) NOT NULL,
-  `model` varchar(75) NOT NULL,
-  `reg_no` varchar(100) NOT NULL,
-  `car_type` varchar(20) NOT NULL,
-  `features` text NOT NULL,
-  `full_specifications` text NOT NULL,
-  `requirements` text NOT NULL,
-  `rent_per_hour` double NOT NULL,
-  `rent_per_day` double NOT NULL,
-  `location_id` int(11) NOT NULL,
-  `photo` varchar(250) NOT NULL,
-  `created` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_car`
---
-
-INSERT INTO `tbl_car` (`id`, `brand`, `model`, `reg_no`, `car_type`, `features`, `full_specifications`, `requirements`, `rent_per_hour`, `rent_per_day`, `location_id`, `photo`, `created`) VALUES
-(1, 'BMW 7 Series\n', '2.8 Petrol, Max Speed: 280 mph\n', 'DM HA 13-5689', 'Car', 'Features', 'Full Specifications', 'Requirements', 5, 7000, 2, 'photo2024-03-15-01-42-41_65f3533109555.png', '2024-03-09 11:15:54'),
-(2, 'Ford Z model', 'Allion A15', 'DM HA 13-5689', 'Car', 'Features', 'Full Specifications', 'Requirements', 10, 7000, 1, 'photo2024-03-15-01-43-03_65f3534769f26.png', '2024-03-09 11:15:54'),
-(3, 'Toyota', 'Allion A15', 'DM HA 13-5689', 'Van', 'Features', 'Full Specifications', 'Requirements', 20, 7000, 2, 'photo2024-03-15-01-44-27_65f3539b028c5.png', '2024-03-09 11:15:54');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_car_addons`
---
-
-CREATE TABLE `tbl_car_addons` (
-  `id` int(11) NOT NULL,
-  `car_id` int(11) NOT NULL,
-  `item` varchar(50) NOT NULL,
-  `charge` double NOT NULL,
-  `created` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_car_addons`
---
-
-INSERT INTO `tbl_car_addons` (`id`, `car_id`, `item`, `charge`, `created`) VALUES
-(5, 1, 'Dash Cam\r\n', 250, '2024-03-09 21:14:04');
 
 -- --------------------------------------------------------
 
@@ -163,64 +91,6 @@ INSERT INTO `tbl_client` (`id`, `institute`, `tagline`, `address`, `mobile`, `ph
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_location`
---
-
-CREATE TABLE `tbl_location` (
-  `id` int(11) NOT NULL,
-  `location` varchar(50) NOT NULL,
-  `cr` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_location`
---
-
-INSERT INTO `tbl_location` (`id`, `location`, `cr`) VALUES
-(1, 'Mirpur', '2024-03-09 07:35:59'),
-(2, 'Uttara', '2024-03-09 07:35:59');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_order`
---
-
-CREATE TABLE `tbl_order` (
-  `order_id` int(11) NOT NULL,
-  `pickupLocation` int(11) NOT NULL,
-  `pickupDate` date NOT NULL,
-  `pickupTime` time NOT NULL,
-  `dropOffLocation` int(11) NOT NULL,
-  `dropOffDate` date NOT NULL,
-  `dropOffTime` time NOT NULL,
-  `h_ours` int(11) NOT NULL,
-  `d_ays` int(11) NOT NULL,
-  `car_id` int(11) NOT NULL,
-  `fullname` varchar(50) NOT NULL,
-  `address` varchar(100) NOT NULL,
-  `contact` varchar(30) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `charge` double NOT NULL,
-  `pcharge` double NOT NULL,
-  `dcharge` double NOT NULL,
-  `addons` double NOT NULL,
-  `total` double NOT NULL,
-  `status` varchar(20) NOT NULL DEFAULT 'Pending',
-  `created` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_order`
---
-
-INSERT INTO `tbl_order` (`order_id`, `pickupLocation`, `pickupDate`, `pickupTime`, `dropOffLocation`, `dropOffDate`, `dropOffTime`, `h_ours`, `d_ays`, `car_id`, `fullname`, `address`, `contact`, `email`, `charge`, `pcharge`, `dcharge`, `addons`, `total`, `status`, `created`) VALUES
-(2, 1, '2024-03-15', '04:00:00', 2, '2024-03-15', '08:00:00', 4, 0, 1, 'Md Abdullah Al Mamun', 'Basurhat, Companygonj, Noakhali', '01777615690', 'exploreit@outlook.com', 20, 10, 20, 250, 300, 'verified', '2024-03-15 19:27:44'),
-(3, 1, '2024-03-15', '04:00:00', 2, '2024-03-15', '08:00:00', 4, 0, 1, 'Md Abdullah Al Mamun', 'Basurhat, Companygonj, Noakhali', '01777615690', 'exploreit@outlook.com', 20, 10, 20, 250, 300, 'Pending', '2024-03-15 19:28:51');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl_page`
 --
 
@@ -261,52 +131,54 @@ INSERT INTO `tbl_page` (`id`, `menu`, `title`, `contants`, `photo`, `attachment`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_pick_drop`
+-- Table structure for table `tbl_passport_check`
 --
 
-CREATE TABLE `tbl_pick_drop` (
+CREATE TABLE `tbl_passport_check` (
   `id` int(11) NOT NULL,
-  `car_id` int(11) NOT NULL,
-  `location_id` int(11) NOT NULL,
-  `p_ick` double NOT NULL,
-  `d_rop` double NOT NULL,
-  `created` timestamp NOT NULL DEFAULT current_timestamp()
+  `pp_no` text NOT NULL,
+  `pp_name` varchar(100) NOT NULL,
+  `status` int(11) NOT NULL,
+  `comment` varchar(200) NOT NULL,
+  `attachment` varchar(100) NOT NULL,
+  `created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tbl_pick_drop`
+-- Dumping data for table `tbl_passport_check`
 --
 
-INSERT INTO `tbl_pick_drop` (`id`, `car_id`, `location_id`, `p_ick`, `d_rop`, `created`) VALUES
-(10, 1, 1, 10, 20, '2024-03-09 21:01:03'),
-(11, 1, 2, 10, 20, '2024-03-09 21:01:03');
+INSERT INTO `tbl_passport_check` (`id`, `pp_no`, `pp_name`, `status`, `comment`, `attachment`, `created`) VALUES
+(1, 'aasdfh74645', 'Holder ', 3, 'Comment', 'attachment2024-04-23-16-48-02_662791e21a0da.pdf', '2024-04-23 11:03:06');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_status`
+--
+
+CREATE TABLE `tbl_status` (
+  `id` int(11) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `cr` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_status`
+--
+
+INSERT INTO `tbl_status` (`id`, `status`, `cr`) VALUES
+(1, 'Mirpur', '2024-03-09 07:35:59'),
+(3, 'Active', '2024-04-23 07:46:46');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `tbl_addons`
---
-ALTER TABLE `tbl_addons`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_car`
---
-ALTER TABLE `tbl_car`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_car_addons`
---
-ALTER TABLE `tbl_car_addons`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -317,40 +189,26 @@ ALTER TABLE `tbl_client`
   ADD KEY `id` (`id`);
 
 --
--- Indexes for table `tbl_location`
---
-ALTER TABLE `tbl_location`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_order`
---
-ALTER TABLE `tbl_order`
-  ADD PRIMARY KEY (`order_id`),
-  ADD KEY `order_id` (`order_id`,`pickupLocation`,`dropOffLocation`,`car_id`),
-  ADD KEY `order_id_2` (`order_id`,`pickupLocation`,`dropOffLocation`,`car_id`);
-
---
 -- Indexes for table `tbl_page`
 --
 ALTER TABLE `tbl_page`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_pick_drop`
+-- Indexes for table `tbl_passport_check`
 --
-ALTER TABLE `tbl_pick_drop`
+ALTER TABLE `tbl_passport_check`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_status`
+--
+ALTER TABLE `tbl_status`
   ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `tbl_addons`
---
-ALTER TABLE `tbl_addons`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_admin`
@@ -359,40 +217,22 @@ ALTER TABLE `tbl_admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `tbl_car`
---
-ALTER TABLE `tbl_car`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `tbl_car_addons`
---
-ALTER TABLE `tbl_car_addons`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `tbl_location`
---
-ALTER TABLE `tbl_location`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `tbl_order`
---
-ALTER TABLE `tbl_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT for table `tbl_page`
 --
 ALTER TABLE `tbl_page`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `tbl_pick_drop`
+-- AUTO_INCREMENT for table `tbl_passport_check`
 --
-ALTER TABLE `tbl_pick_drop`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE `tbl_passport_check`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tbl_status`
+--
+ALTER TABLE `tbl_status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
