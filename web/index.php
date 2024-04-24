@@ -1,177 +1,43 @@
-<?php include('../config.php');
-
-
-	$sql= mysqli_query($conn,"SELECT * from tbl_page where id =1 ");
-	$about = mysqli_fetch_assoc($sql);
-
-	$sql= mysqli_query($conn,"SELECT * from tbl_page where id =2 ");
-	$service_one = mysqli_fetch_assoc($sql);
-
-	$sql= mysqli_query($conn,"SELECT * from tbl_page where id =3 ");
-	$service_two = mysqli_fetch_assoc($sql);
-
-	$sql= mysqli_query($conn,"SELECT * from tbl_page where id =4 ");
-	$service_three = mysqli_fetch_assoc($sql);	
-	
-	
-	$sql= mysqli_query($conn,"SELECT * from tbl_page where id =5 ");
-	$counter_one = mysqli_fetch_assoc($sql);	
-	
-	$sql= mysqli_query($conn,"SELECT * from tbl_page where id =6 ");
-	$counter_two = mysqli_fetch_assoc($sql);	
-	
-	$sql= mysqli_query($conn,"SELECT * from tbl_page where id =7 ");
-	$counter_three = mysqli_fetch_assoc($sql);	
-	
-	$sql= mysqli_query($conn,"SELECT * from tbl_page where id =8 ");
-	$counter_four = mysqli_fetch_assoc($sql);	
-	
-	
-	$sql= mysqli_query($conn,"SELECT * from tbl_page where id =9 ");
-	$car_rental = mysqli_fetch_assoc($sql);
-
-  include('header.php');
-?>
-
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-5">
-        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="img/carousel-bg-1.jpg" alt="Image">
-                    <div class="carousel-caption d-flex align-items-center">
-                        <div class="container">
-                            <div class="row align-items-center justify-content-center justify-content-lg-start">
-                                <div class="col-12 col-lg-12 text-center text-lg-start">
-                                    <h6 class="text-white text-uppercase mb-3 animated slideInDown">// F1 AUTOMOTIVES //</h6>
-                                    <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">HIRE A CAR</h1>
-                                    <a href="hire_car.php" class="btn btn-primary py-3 px-5 animated slideInDown">Read More<i class="fa fa-arrow-right ms-3"></i></a>
-                                </div>
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="img/carousel-bg-3.jpg" alt="Image">
-                    <div class="carousel-caption d-flex align-items-center">
-                        <div class="container">
-                            <div class="row align-items-center justify-content-center justify-content-lg-start">
-                                <div class="col-12 col-lg-12 text-center text-lg-start">
-                                    <h6 class="text-white text-uppercase mb-3 animated slideInDown">// F1 AUTOMOTIVES//</h6>
-                                    <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">HIRE A CHAUFFEUR</h1>
-                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Read More<i class="fa fa-arrow-right ms-3"></i></a>
-                                </div>
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>        
-				<div class="carousel-item">
-                     <img class="w-100" src="img/carousel-bg-4.jpg" alt="Image">
-                    <div class="carousel-caption d-flex align-items-center">
-                        <div class="container">
-                            <div class="row align-items-center justify-content-center justify-content-lg-start">
-                                <div class="col-12 col-lg-12 text-center text-lg-start">
-                                    <h6 class="text-white text-uppercase mb-3 animated slideInDown">// F1 AUTOMOTIVES//</h6>
-                                    <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">BREAKDOWN COVERAGE</h1>
-                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Read More<i class="fa fa-arrow-right ms-3"></i></a>
-                                </div>
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>			
-
-				<div class="carousel-item">
-                    <img class="w-100" src="img/carousel-bg-5.jpg" alt="Image">
-                    <div class="carousel-caption d-flex align-items-center">
-                        <div class="container">
-                            <div class="row align-items-center justify-content-center justify-content-lg-start">
-                                <div class="col-12 col-lg-12 text-center text-lg-start">
-                                    <h6 class="text-white text-uppercase mb-3 animated slideInDown">// F1 AUTOMOTIVES//</h6>
-                                    <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">EXPERIENCE DAY</h1>
-                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Read More<i class="fa fa-arrow-right ms-3"></i></a>
-                                </div>
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
-    <!-- Carousel End -->
-
-
-    <!-- Service Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex py-5 px-4">
-                        <i class="fa fa-certificate fa-3x text-primary flex-shrink-0"></i>
-                        <div class="ps-4">
-                            <h5 class="mb-3"><?php echo $service_one['title']; ?></h5>
-                            <p><?php echo implode(' ', array_slice(explode(' ', $service_one['contants']), 0, 10)); ?></p>
-                            <a class="text-secondary border-bottom" href="page.php?id=2">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="d-flex bg-light py-5 px-4">
-                        <i class="fa fa-users-cog fa-3x text-primary flex-shrink-0"></i>
-                        <div class="ps-4">
-                            <h5 class="mb-3"><?php echo $service_two['title']; ?></h5>
-                            <p><?php echo implode(' ', array_slice(explode(' ', $service_two['contants']), 0, 10)); ?></p>
-                            <a class="text-secondary border-bottom" href="page.php?id=3">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="d-flex py-5 px-4">
-                        <i class="fa fa-tools fa-3x text-primary flex-shrink-0"></i>
-                        <div class="ps-4">
-                            <h5 class="mb-3"><?php echo $service_three['title']; ?></h5>
-                            <p><?php echo implode(' ', array_slice(explode(' ', $service_three['contants']), 0, 10)); ?></p>
-                            <a class="text-secondary border-bottom" href="page.php?id=4">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
+<?php include('header.php');?>
 
 
     <!-- About Start -->
-    <div class="container-xxl py-5">
+    <div class="container-fluid py-5">
         <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 pt-4" style="min-height: 400px;">
-                    <div class="position-relative h-100 wow fadeIn" data-wow-delay="0.1s">
-                        <img class="position-absolute img-fluid w-100 h-100" src="../uploads/<?php echo $about['photo']; ?>" style="object-fit: cover;" alt="">
-                        <div class="position-absolute top-0 end-0 mt-n4 me-n4 py-4 px-5" style="background: rgba(0, 0, 0, .08);">
-                            <h1 class="display-4 text-white mb-0">15 <span class="fs-4">Years</span></h1>
-                            <h4 class="text-white">Experience</h4>
-                        </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5 pb-4 pb-lg-0">
+                    <img class="img-fluid w-100" src="img/about.jpg" alt="">
+                    <div class="bg-primary text-dark text-center p-4">
+                        <h3 class="m-0">25+ Years Experience</h3>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <h6 class="text-primary text-uppercase">// About Us //</h6>
-                    <h1 class="mb-4"><span class="text-primary">F1 AUTOMOTIVES</span> Is The Best Place For   Care</h1>
-                   <?php echo $about['contants']; ?>
-                    <a href="page.php?id=1" class="btn btn-primary py-3 px-5">Read More<i class="fa fa-arrow-right ms-3"></i></a>
+                <div class="col-lg-7">
+                    <h6 class="text-primary text-uppercase font-weight-bold">About Us</h6>
+                    <h1 class="mb-4">Trusted & Faster Logistic Service Provider</h1>
+                    <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                    <div class="d-flex align-items-center pt-2">
+                        <button type="button" class="btn-play" data-toggle="modal"
+                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
+                            <span></span>
+                        </button>
+                        <h5 class="font-weight-bold m-0 ml-4">Play Video</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Video Modal -->
+        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>        
+                        <!-- 16:9 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -179,183 +45,400 @@
     <!-- About End -->
 
 
-    <!-- Fact Start -->
-    <div class="container-fluid fact bg-dark my-5 py-5">
+    <!--  Quote Request Start -->
+    <div class="container-fluid bg-secondary my-5">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
-                    <i class="fa fa-check fa-2x text-white mb-3"></i>
-                    <h2 class="text-white mb-2" data-toggle="counter-up"><?php echo $counter_one['contants']; ?></h2>
-                    <p class="text-white mb-0"><?php echo $counter_one['title']; ?></p>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
-                    <i class="fa fa-map-marker-alt fa-2x text-white mb-3"></i>
-                    <h2 class="text-white mb-2" data-toggle="counter-up"><?php echo $counter_two['contants']; ?></h2>
-                    <p class="text-white mb-0"><?php echo $counter_two['title']; ?></p>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
-                    <i class="fa fa-users fa-2x text-white mb-3"></i>
-                    <h2 class="text-white mb-2" data-toggle="counter-up"><?php echo $counter_three['contants']; ?></h2>
-                    <p class="text-white mb-0"><?php echo $counter_three['title']; ?></p>
-                </div>
-                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
-                    <i class="fa fa-car fa-2x text-white mb-3"></i>
-                    <h2 class="text-white mb-2" data-toggle="counter-up"><?php echo $counter_four['contants']; ?></h2>
-                    <p class="text-white mb-0"><?php echo $counter_four['title']; ?></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Fact End -->
-
-
-    <!-- Service Start -->
-    <div class="container-xxl service py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-primary text-uppercase">// Our Services //</h6>
-                <h1 class="mb-5">Explore Our Vehicles</h1>
-            </div>
-            <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="col-lg-3">
-                    <div class="nav w-100 nav-pills me-4">
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 active" data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
-                            <i class="fa fa-car fa-2x me-3"></i>
-                            <h4 class="m-0">Car</h4>
-                        </button>
-                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-2" type="button">
-                            <i class="fa fa-truck fa-2x me-3"></i>
-                            <h4 class="m-0">Van</h4>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <div class="tab-content w-100">
-                        <div class="tab-pane fade show active" id="tab-pane-1">
-                            <div class="row g-4">
-                                    
-                             	  <?php
-			   
-									  $sql = "SELECT  * from  tbl_car where car_type='Car'";
-										$result = $conn->query($sql);
-									  if ($result->num_rows > 0) {		
-										while($row = $result->fetch_assoc()) {
-									  ?>
-                                <div class="col-md-4 text-center">
-								<a href="#"> 
-									<div style="padding: 30px; color: grey; padding-bottom: 20px;     border: 1px solid lightgray;">
-									<div class="text-center">
-									<img class="" src="../uploads/<?php echo $row['photo']; ?>" style="height: 100px"/> <hr>
-									</div>
-								<div style="font-weight:bold"><i class="fa fa-solid fa-car text-danger"></i>  <?php echo $row['brand']; ?></div>
-								<div style=""> <?php echo $row['model']; ?></div>
-								<div style="">  <?php echo $row['features']; ?></div>
-                                </div>
-								</a>
-                                </div>
-								
-								 
-								 <?php
-                  }
-                  }
-                  ?>
-                          
+            <div class="row align-items-center">
+                <div class="col-lg-7 py-5 py-lg-0">
+                    <h6 class="text-primary text-uppercase font-weight-bold">Get A Quote</h6>
+                    <h1 class="mb-4">Request A Free Quote</h1>
+                    <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h1 class="text-primary mb-2" data-toggle="counter-up">225</h1>
+                            <h6 class="font-weight-bold mb-4">SKilled Experts</h6>
                         </div>
-                                 
-                            </div>
-                 
- 
-                    
-                    <div class="tab-pane fade show " id="tab-pane-2">
-                            <div class="row g-4">
-                                    
-                             	  <?php
-			   
-									  $sql = "SELECT  * from  tbl_car where car_type='Van'";
-										$result = $conn->query($sql);
-									  if ($result->num_rows > 0) {		
-										while($row = $result->fetch_assoc()) {
-									  ?>
-                             <div class="col-md-4 text-center ">
-									<div style="1pxsolid #607d8b36;padding: 30px; padding-bottom: 20px; box-shadow: 0px 7px 12px 0px #cccccca3;">
-									<div class="text-center">
-									<img class="" src="../uploads/<?php echo $row['photo']; ?>" style="height: 100px"/> <hr>
-									</div>
-								<div style="font-weight:bold"><i class="fa fa-solid fa-car text-danger"></i>  <?php echo $row['brand']; ?></div>
-								<div style=""> <?php echo $row['model']; ?></div>
-								<div style="">  <?php echo $row['features']; ?></div>
-                                </div>
-                                </div>
-								
-								 
-								 <?php
-                  }
-                  }
-                  ?>
-                          
+                        <div class="col-sm-4">
+                            <h1 class="text-primary mb-2" data-toggle="counter-up">1050</h1>
+                            <h6 class="font-weight-bold mb-4">Happy Clients</h6>
                         </div>
-                                 
+                        <div class="col-sm-4">
+                            <h1 class="text-primary mb-2" data-toggle="counter-up">2500</h1>
+                            <h6 class="font-weight-bold mb-4">Complete Projects</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="bg-primary py-5 px-4 px-sm-5">
+                        <form class="py-5">
+                            <div class="form-group">
+                                <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
                             </div>
-                  
+                            <div class="form-group">
+                                <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <select class="custom-select border-0 px-4" style="height: 47px;">
+                                    <option selected>Select A Service</option>
+                                    <option value="1">Service 1</option>
+                                    <option value="2">Service 1</option>
+                                    <option value="3">Service 1</option>
+                                </select>
+                            </div>
+                            <div>
+                                <button class="btn btn-dark btn-block border-0 py-3" type="submit">Get A Quote</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Service End -->
+    <!-- Quote Request Start -->
 
 
-    <!-- Booking Start -->
-    <div class="container-fluid bg-secondary booking my-5 wow fadeInUp" data-wow-delay="0.1s">
+    <!-- Services Start -->
+    <div class="container-fluid pt-5">
         <div class="container">
-            <div class="row gx-5">
-                <div class="col-lg-6 py-5">
-                    <div class="py-5">
-                        <h1 class="text-white mb-4"><?php echo $car_rental['title']; ?></h1>
-                        <p class="text-white mb-0"><?php echo $car_rental['contants']; ?></p>
+            <div class="text-center pb-2">
+                <h6 class="text-primary text-uppercase font-weight-bold">Our Services</h6>
+                <h1 class="mb-4">Best Logistic Services</h1>
+            </div>
+            <div class="row pb-3">
+                <div class="col-lg-3 col-md-6 text-center mb-5">
+                    <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
+                        <i class="fa fa-2x fa-plane text-dark pr-3"></i>
+                        <h6 class="text-white font-weight-medium m-0">Air Freight</h6>
                     </div>
+                    <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet diam sea est diam</p>
+                    <a class="border-bottom text-decoration-none" href="">Read More</a>
                 </div>
-                <div class="col-lg-6">
-                   
+                <div class="col-lg-3 col-md-6 text-center mb-5">
+                    <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
+                        <i class="fa fa-2x fa-ship text-dark pr-3"></i>
+                        <h6 class="text-white font-weight-medium m-0">Ocean Freight</h6>
+                    </div>
+                    <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet diam sea est diam</p>
+                    <a class="border-bottom text-decoration-none" href="">Read More</a>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center mb-5">
+                    <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
+                        <i class="fa fa-2x fa-truck text-dark pr-3"></i>
+                        <h6 class="text-white font-weight-medium m-0">Land Transport</h6>
+                    </div>
+                    <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet diam sea est diam</p>
+                    <a class="border-bottom text-decoration-none" href="">Read More</a>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center mb-5">
+                    <div class="d-flex align-items-center justify-content-center bg-primary mb-4 p-4">
+                        <i class="fa fa-2x fa-store text-dark pr-3"></i>
+                        <h6 class="text-white font-weight-medium m-0">Cargo Storage</h6>
+                    </div>
+                    <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet diam sea est diam</p>
+                    <a class="border-bottom text-decoration-none" href="">Read More</a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Booking End -->
+    <!-- Services End -->
 
- 
+
+    <!-- Features Start -->
+    <div class="container-fluid bg-secondary my-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <img class="img-fluid w-100" src="img/feature.jpg" alt="">
+                </div>
+                <div class="col-lg-7 py-5 py-lg-0">
+                    <h6 class="text-primary text-uppercase font-weight-bold">Why Choose Us</h6>
+                    <h1 class="mb-4">Faster, Safe and Trusted Logistics Services</h1>
+                    <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                    <ul class="list-inline">
+                        <li><h6><i class="far fa-dot-circle text-primary mr-3"></i>Best In Industry</h6>
+                        <li><h6><i class="far fa-dot-circle text-primary mr-3"></i>Emergency Services</h6></li>
+                        <li><h6><i class="far fa-dot-circle text-primary mr-3"></i>24/7 Customer Support</h6></li>
+                    </ul>
+                    <a href="" class="btn btn-primary mt-3 py-2 px-4">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features End -->
+
+
+    <!-- Pricing Plan Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <h6 class="text-primary text-uppercase font-weight-bold">Pricing Plan</h6>
+                <h1 class="mb-4">Affordable Pricing Packages</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <div class="bg-secondary">
+                        <div class="text-center p-4">
+                            <h1 class="display-4 mb-0">
+                                <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;">$</small>49<small class="align-bottom text-muted font-weight-medium" style="font-size: 16px; line-height: 40px;">/Mo</small>
+                            </h1>
+                        </div>
+                        <div class="bg-primary text-center p-4">
+                            <h3 class="m-0">Basic</h3>
+                        </div>
+                        <div class="d-flex flex-column align-items-center py-4">
+                            <p>HTML5 & CSS3</p>
+                            <p>Bootstrap 4</p>
+                            <p>Responsive Layout</p>
+                            <p>Compatible With All Browsers</p>
+                            <a href="" class="btn btn-primary py-2 px-4 my-2">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="bg-secondary">
+                        <div class="text-center p-4">
+                            <h1 class="display-4 mb-0">
+                                <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;">$</small>99<small class="align-bottom text-muted font-weight-medium" style="font-size: 16px; line-height: 40px;">/Mo</small>
+                            </h1>
+                        </div>
+                        <div class="bg-primary text-center p-4">
+                            <h3 class="m-0">Premium</h3>
+                        </div>
+                        <div class="d-flex flex-column align-items-center py-4">
+                            <p>HTML5 & CSS3</p>
+                            <p>Bootstrap 4</p>
+                            <p>Responsive Layout</p>
+                            <p>Compatible With All Browsers</p>
+                            <a href="" class="btn btn-primary py-2 px-4 my-2">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="bg-secondary">
+                        <div class="text-center p-4">
+                            <h1 class="display-4 mb-0">
+                                <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;">$</small>149<small class="align-bottom text-muted font-weight-medium" style="font-size: 16px; line-height: 40px;">/Mo</small>
+                            </h1>
+                        </div>
+                        <div class="bg-primary text-center p-4">
+                            <h3 class="m-0">Business</h3>
+                        </div>
+                        <div class="d-flex flex-column align-items-center py-4">
+                            <p>HTML5 & CSS3</p>
+                            <p>Bootstrap 4</p>
+                            <p>Responsive Layout</p>
+                            <p>Compatible With All Browsers</p>
+                            <a href="" class="btn btn-primary py-2 px-4 my-2">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pricing Plan End -->
+
+
+    <!-- Team Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <h6 class="text-primary text-uppercase font-weight-bold">Delivery Team</h6>
+                <h1 class="mb-4">Meet Our Delivery Team</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5">
+                        <img class="card-img-top" src="img/team-1.jpg" alt="">
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h5 class="font-weight-bold">Full Name</h5>
+                                <span>Designation</span>
+                            </div>
+                            <div class="team-social d-flex align-items-center justify-content-center bg-primary">
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5">
+                        <img class="card-img-top" src="img/team-2.jpg" alt="">
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h5 class="font-weight-bold">Full Name</h5>
+                                <span>Designation</span>
+                            </div>
+                            <div class="team-social d-flex align-items-center justify-content-center bg-primary">
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5">
+                        <img class="card-img-top" src="img/team-3.jpg" alt="">
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h5 class="font-weight-bold">Full Name</h5>
+                                <span>Designation</span>
+                            </div>
+                            <div class="team-social d-flex align-items-center justify-content-center bg-primary">
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team card position-relative overflow-hidden border-0 mb-5">
+                        <img class="card-img-top" src="img/team-4.jpg" alt="">
+                        <div class="card-body text-center p-0">
+                            <div class="team-text d-flex flex-column justify-content-center bg-secondary">
+                                <h5 class="font-weight-bold">Full Name</h5>
+                                <span>Designation</span>
+                            </div>
+                            <div class="team-social d-flex align-items-center justify-content-center bg-primary">
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-outline-dark btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
 
     <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-fluid py-5">
         <div class="container">
-            <div class="text-center">
-                <h6 class="text-primary text-uppercase">// Testimonial //</h6>
-                <h1 class="mb-5">Our Clients Say!</h1>
+            <div class="text-center pb-2">
+                <h6 class="text-primary text-uppercase font-weight-bold">Testimonial</h6>
+                <h1 class="mb-4">Our Clients Say</h1>
             </div>
-            <div class="owl-carousel testimonial-carousel position-relative">
-				  <?php
-			   
-			      $sql = "SELECT  * from  tbl_page where menu='Testimonial'";
-					$result = $conn->query($sql);
-                  if ($result->num_rows > 0) {		
-                  	while($row = $result->fetch_assoc()) {
-                  ?>
-			
-                <div class="testimonial-item text-center">
-                    <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="../uploads/<?php echo $row['photo']; ?>" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0"><?php echo $row['title']; ?></h5>
-                    <p>Customer</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0"> <?php echo $row['contants']; ?>.</p>
+            <div class="owl-carousel testimonial-carousel">
+                <div class="position-relative bg-secondary p-4">
+                    <i class="fa fa-3x fa-quote-right text-primary position-absolute" style="top: -6px; right: 0;"></i>
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid rounded-circle" src="img/testimonial-1.jpg" style="width: 60px; height: 60px;" alt="">
+                        <div class="ml-3">
+                            <h6 class="font-weight-semi-bold m-0">Client Name</h6>
+                            <small>- Profession</small>
+                        </div>
                     </div>
+                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita</p>
                 </div>
-                <?php
-                  }
-                  }
-                  ?>
+                <div class="position-relative bg-secondary p-4">
+                    <i class="fa fa-3x fa-quote-right text-primary position-absolute" style="top: -6px; right: 0;"></i>
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid rounded-circle" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;" alt="">
+                        <div class="ml-3">
+                            <h6 class="font-weight-semi-bold m-0">Client Name</h6>
+                            <small>- Profession</small>
+                        </div>
+                    </div>
+                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita</p>
+                </div>
+                <div class="position-relative bg-secondary p-4">
+                    <i class="fa fa-3x fa-quote-right text-primary position-absolute" style="top: -6px; right: 0;"></i>
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid rounded-circle" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;" alt="">
+                        <div class="ml-3">
+                            <h6 class="font-weight-semi-bold m-0">Client Name</h6>
+                            <small>- Profession</small>
+                        </div>
+                    </div>
+                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita</p>
+                </div>
+                <div class="position-relative bg-secondary p-4">
+                    <i class="fa fa-3x fa-quote-right text-primary position-absolute" style="top: -6px; right: 0;"></i>
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid rounded-circle" src="img/testimonial-4.jpg" style="width: 60px; height: 60px;" alt="">
+                        <div class="ml-3">
+                            <h6 class="font-weight-semi-bold m-0">Client Name</h6>
+                            <small>- Profession</small>
+                        </div>
+                    </div>
+                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr clita lorem. Dolor ipsum sanct clita</p>
+                </div>
             </div>
         </div>
     </div>
     <!-- Testimonial End -->
+
+
+    <!-- Blog Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <h6 class="text-primary text-uppercase font-weight-bold">Our Blog</h6>
+                <h1 class="mb-4">Latest From Blog</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-5">
+                    <div class="position-relative">
+                        <img class="img-fluid w-100" src="img/blog-1.jpg" alt="">
+                        <div class="position-absolute bg-primary d-flex flex-column align-items-center justify-content-center rounded-circle"
+                            style="width: 60px; height: 60px; bottom: -30px; right: 30px;">
+                            <h4 class="font-weight-bold mb-n1">01</h4>
+                            <small class="text-white text-uppercase">Jan</small>
+                        </div>
+                    </div>
+                    <div class="bg-secondary" style="padding: 30px;">
+                        <div class="d-flex mb-3">
+                            <div class="d-flex align-items-center">
+                                <img class="rounded-circle" style="width: 40px; height: 40px;" src="img/user.jpg" alt="">
+                                <a class="text-muted ml-2" href="">John Doe</a>
+                            </div>
+                            <div class="d-flex align-items-center ml-4">
+                                <i class="far fa-bookmark text-primary"></i>
+                                <a class="text-muted ml-2" href="">Web Design</a>
+                            </div>
+                        </div>
+                        <h4 class="font-weight-bold mb-3">Kasd tempor diam sea justo dolor</h4>
+                        <p>Dolor sea ipsum ipsum et. Erat duo lorem magna vero dolor dolores. Rebum eirmod no dolor diam dolor amet ipsum. Lorem lorem sea sed diam est lorem magna</p>
+                        <a class="border-bottom border-primary text-uppercase text-decoration-none" href="">Read More <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-5">
+                    <div class="position-relative">
+                        <img class="img-fluid w-100" src="img/blog-2.jpg" alt="">
+                        <div class="position-absolute bg-primary d-flex flex-column align-items-center justify-content-center rounded-circle"
+                            style="width: 60px; height: 60px; bottom: -30px; right: 30px;">
+                            <h4 class="font-weight-bold mb-n1">01</h4>
+                            <small class="text-white text-uppercase">Jan</small>
+                        </div>
+                    </div>
+                    <div class="bg-secondary" style="padding: 30px;">
+                        <div class="d-flex mb-3">
+                            <div class="d-flex align-items-center">
+                                <img class="rounded-circle" style="width: 40px; height: 40px;" src="img/user.jpg" alt="">
+                                <a class="text-muted ml-2" href="">John Doe</a>
+                            </div>
+                            <div class="d-flex align-items-center ml-4">
+                                <i class="far fa-bookmark text-primary"></i>
+                                <a class="text-muted ml-2" href="">Web Design</a>
+                            </div>
+                        </div>
+                        <h4 class="font-weight-bold mb-3">Kasd tempor diam sea justo dolor</h4>
+                        <p>Dolor sea ipsum ipsum et. Erat duo lorem magna vero dolor dolores. Rebum eirmod no dolor diam dolor amet ipsum. Lorem lorem sea sed diam est lorem magna</p>
+                        <a class="border-bottom border-primary text-uppercase text-decoration-none" href="">Read More <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
 
 <?php include('footer.php');?>
