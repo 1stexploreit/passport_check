@@ -84,7 +84,7 @@ include('header.php');
 		     <select class="form-control" name="menu" required>
 				<option value="<?php echo $row["menu"]; ?>"><?php echo $row["menu"]; ?></option>
 				<option value="Fixed">Fixed</option>
-				<option value="News">Whats is New</option>
+				<option value="Visa Process">Visa Process</option>
 				<option value="Testimonial">Testimonial</option>
             </select>
  

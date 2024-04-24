@@ -23,10 +23,10 @@
 <div class="mt-4 mb-2 page-title">
    <div class="row">
         <div class="col-md-6 my-auto">
-         Passport Check  <i class="fas fa-angle-right"></i>  All Passport Checks 
+         Passport   <i class="fas fa-angle-right"></i>  All Passport   
       </div>
        <div class="col-md-6 text-right">
-         <a href="add_passport_check.php" class="btn btn-outline-primary"><i class="fas fa-plus"></i> Add Passport Check  </a>
+         <a href="add_passport_check.php" class="btn btn-outline-primary"><i class="fas fa-plus"></i> Add Passport  </a>
       </div>
    </div>
 </div>
@@ -58,9 +58,9 @@
                   <td> <?php echo $row["status"]; ?> </td>                  
                   <td> <?php echo $row["comment"]; ?> </td>                  
                   <td  align="right" width="10%" nowrap>
-					<a class="btn btn-outline-info btn-sm" href="../uploads/<?php echo $row["attachment"] ?>"> <i class="fa fa-print"> </i> View </a>
-					<a class="btn btn-outline-success btn-sm" href="edit_passport_check.php?id=<?php echo $row["id"]; ?>"><i class="fa fa-edit"></i>   </a>
-					<a data-appd="<?php echo $row['id'] ?>" class="btn btn-outline-danger btn-sm delete" href="#"><i class="fa fa-trash text-danger"> </i>   </a>
+					<a class="btn btn-outline-info btn-sm" href="../uploads/<?php echo $row["attachment"] ?>" target="_blank"> <i class="fa fa-paperclip" aria-hidden="true"></i> Attechment </a>
+					<a class="btn btn-outline-success btn-sm" href="edit_passport_check.php?id=<?php echo $row["id"]; ?>"><i class="fa fa-edit"></i>  Edit </a>
+					<a data-appd="<?php echo $row['id'] ?>" class="btn btn-outline-danger btn-sm delete" href="#"><i class="fa fa-trash text-danger"> </i> Delete  </a>
                   </td>
                </tr>
                <?php

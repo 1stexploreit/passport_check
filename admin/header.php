@@ -6,7 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
    <meta name="description" content="" />
    <meta name="author" content="" />
-   <title> f1automotives 1.0</title>
+   <title> <?php echo $institute;?></title>
    <link href="../assets/css/styles.css" rel="stylesheet" />
    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
@@ -21,7 +21,7 @@
 </head>
 <body class="sb-nav-fixed">
    <nav class="sb-topnav navbar navbar-expand navbar-light bg-light">
-      <a class="navbar-brand " href="index.php"> <img src="../uploads/<?php echo $siteid["logo"]; ?>" alt="" class="thumb-sm rounded-circle  animate__animated animate__pulse"> f1automotives <span style="color: #;"> </span>  </a>
+      <a class="navbar-brand " href="index.php"> <img src="../uploads/<?php echo $siteid["logo"]; ?>" alt="" class="thumb-sm rounded-circle  animate__animated animate__pulse"> Admin Panel <span style="color: #;"> </span>  </a>
       <button class="btn btn-link btn-sm order-1 order-lg-0 " id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
       <div class=" form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
       </div>
@@ -79,14 +79,14 @@
 			   
 			   
                <a class="nav-link collapsed patient" href="#" data-toggle="collapse" data-target="#car" aria-expanded="false" aria-controls="collapseLayouts">
-                  <div class="sb-nav-link-icon"><i class="fas fa-car"></i></div>
-                Passport Check
+                  <div class="sb-nav-link-icon"><i class="fas fa-file"></i></div>
+                Passport
                   <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                </a>
                <div class="collapse" id="car" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                   <nav class="sb-sidenav-menu-nested nav">
-                     <a class="nav-link" href="add_passport_check.php"> Add Passport Check </a>
-                     <a class="nav-link" href="list_passport_check.php"> All Passport Checks    </a>
+                     <a class="nav-link" href="add_passport_check.php"> Add Passport </a>
+                     <a class="nav-link" href="list_passport_check.php"> All Passport </a>
                   </nav>
                </div>
 

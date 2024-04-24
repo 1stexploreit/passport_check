@@ -49,18 +49,18 @@
         <div class="mt-3 card-body">
           <div class="form-row">
 		     
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-4">
               <label for="inputEmail4">Passport No</label>
               <input type="text" class="form-control" id="pp_no" required  name="pp_no">
 			 </div>
       
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-4">
               <label for="inputEmail4">Passport Holder Name</label>
               <input type="text" class="form-control"  name="pp_name" required>
             </div>
 			
 
-			<div class="form-group col-md-3">
+			<div class="form-group col-md-4">
               <label for="inputCity"> Status</label>
 				<select name="status" class="form-control" >
 						<option >---</option>
@@ -72,21 +72,24 @@
 						if ($result->num_rows > 0) {		
 						while($row = $result->fetch_assoc()) {
 						?>
-				<option value="<?php echo $row["id"]; ?>"><?php echo $row["status"]; ?></option>
+				<option value="<?php echo $row["status"]; ?>"><?php echo $row["status"]; ?></option>
 							<?php
 							}
 							}
 							?>
 					</select>
             </div>
-            <div class="form-group col-md-3">
-                <label for="inputEmail4">Attachment</label>
-				<input type="file" class="form-control"  name="attachment" >
-            </div>
-			<div class="form-group col-md-6">
+            
+			<div class="form-group col-md-12">
               <label for="inputEmail4">Comment</label>
-			  <input type="text" class="form-control"  name="comment" >
+			  <textarea type="text" class="form-control"  name="comment" ></textarea>
             </div>
+			
+			<div class="form-group col-md-3">
+                <label for="inputEmail4">Attachment</label>
+				<input type="file"   name="attachment" >
+            </div>
+			
         </div>
     </div>
     

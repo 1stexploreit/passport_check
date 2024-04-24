@@ -37,10 +37,8 @@
 
 	}
 	
-		$sql= mysqli_query($conn,"SELECT tbl_passport_check.*, tbl_status.status
-				FROM tbl_passport_check
-				left join tbl_status on tbl_passport_check.status=tbl_status.id 
-				WHERE tbl_passport_check.id='$get_id'  ");
+		$sql= mysqli_query($conn,"SELECT tbl_passport_check * FROM tbl_passport_check
+				WHERE tbl_passport_check.id='$get_id' ");
     $row = mysqli_fetch_assoc($sql);
 	///Header
 	 include('header.php'); 
@@ -93,7 +91,7 @@
 						if ($result->num_rows > 0) {		
 						while($sta = $result->fetch_assoc()) {
 						?>
-				<option value="<?php echo $sta["id"]; ?>"><?php echo $sta["status"]; ?></option>
+				<option value="<?php echo $sta["status"]; ?>"><?php echo $sta["status"]; ?></option>
 							<?php
 							}
 							}

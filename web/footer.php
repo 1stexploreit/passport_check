@@ -1,14 +1,15 @@
  
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white   py-5 px-sm-3 px-md-5">
+        <div class="container">
         <div class="row pt-5">
             <div class="col-lg-7 col-md-6">
                 <div class="row">
                     <div class="col-md-6 mb-5">
                         <h3 class="text-primary mb-4">Get In Touch</h3>
-                        <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
-                        <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                        <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                        <p><i class="fa fa-map-marker-alt mr-2"></i><?php echo $address;?></p>
+                        <p><i class="fa fa-phone-alt mr-2"></i><?php echo $mobile;?></p>
+                        <p><i class="fa fa-envelope mr-2"></i><?php echo $email;?></p>
                         <div class="d-flex justify-content-start mt-4">
                             <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -20,8 +21,8 @@
                         <h3 class="text-primary mb-4">Quick Links</h3>
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-white mb-2" href="index.php"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-white mb-2" href="page.png?id=1"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                            <a class="text-white mb-2" href="visa_package.php"><i class="fa fa-angle-right mr-2"></i>Our Visa Package</a>
+                            <a class="text-white mb-2" href="page.php?id=1"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                            <a class="text-white mb-2" href="service.php"><i class="fa fa-angle-right mr-2"></i>Our Visa Package</a>
                             <a class="text-white" href="contact.php"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                         </div>
                     </div>
@@ -29,7 +30,7 @@
             </div>
             <div class="col-lg-5 col-md-6 mb-5">
                 <h3 class="text-primary mb-4">Newsletter</h3>
-                <p>Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu kasd sed ea duo ipsum. Dolor duo eirmod sea justo no lorem est diam</p>
+                <p class="d-none">Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu kasd sed ea duo ipsum. Dolor duo eirmod sea justo no lorem est diam</p>
                 <div class="w-100">
                     <div class="input-group">
                         <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Your Email Address">
@@ -41,16 +42,18 @@
             </div>
         </div>
     </div>
+    </div>
     <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: #3E3E4E !important;">
-        <div class="row">
+         <div class="container">
+	  <div class="row">
             <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white">&copy; <a href="#">Your Site Name</a>. All Rights Reserved. 
+                <p class="m-0 text-white">&copy; <a href="#"><?php echo $institute;?></a>. All Rights Reserved. 
 				
 				  
                 <br>Developed By: <a href="https://noorsoftbd.com" target="_blank">Noor Soft</a>
                 </p>
             </div>
-            <div class="col-lg-6 text-center text-md-right">
+            <div class="col-lg-6 text-center text-md-right d-none">
                 <ul class="nav d-inline-flex">
                     <li class="nav-item">
                         <a class="nav-link text-white py-0" href="#">Privacy</a>
@@ -66,6 +69,7 @@
                     </li>
                 </ul>
             </div>
+        </div>
         </div>
     </div>
     <!-- Footer End -->

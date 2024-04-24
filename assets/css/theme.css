@@ -191,7 +191,7 @@ samp {
 }
 
 .sb-sidenav-light {
-	background-color: #FFC107 !important;
+	background-color: #FF9800 !important;
 	/* border-right: 1px solid #ffdddd; */
 }
 
@@ -510,7 +510,7 @@ select {
 .table thead th {
 	vertical-align: bottom;
 	border-top: none;
-	border-bottom: 2px solid #ffc107;
+	border-bottom: 2px solid #FF9800;
 	text-transform: uppercase;
 	color: #000000;
 	font-size: 14px;
@@ -640,7 +640,7 @@ select {
 	padding-top: 1rem;
 	font-weight: 700;
 	font-size: 21px!important;
-	background: #ffc107 !important;
+	background: #FF9800 !important;
 	padding-left: 26px;
 	color: #000000;
 	/* box-shadow: 0px 4px 0px 0px #0074cd; */

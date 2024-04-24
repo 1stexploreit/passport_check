@@ -67,14 +67,14 @@ include('header.php');
             <select class="form-control" name="menu" required>
             <option>---</option>
 			<option value="Fixed">Fixed</option>
-			<option value="News">Whats is New</option>
+			<option value="Visa Process">Visa Process</option>
 			<option value="Testimonial">Testimonial</option>
             </select>
           </div>
 
           <label><i class="fas fa-image"></i> PHOTO (JPG)</label>
           <div class="form-group">
-            <input class="form-control" name="photo" type="file" id="f" onchange="ValidateSingleInput(this);" accept=".jpg" />
+            <input class="form-control" name="photo" type="file" id="f" onchange="ValidateSingleInput(this);"   />
           </div>
           </div>
 		  
