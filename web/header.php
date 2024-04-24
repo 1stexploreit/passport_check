@@ -71,41 +71,18 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav m-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Service</a>
-                    <a href="price.html" class="nav-item nav-link">Price</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                            <a href="single.html" class="dropdown-item">Blog Detail</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="index.php" class="nav-item nav-link active">Home</a>
+                    <a href="page.php?id=1" class="nav-item nav-link">About</a>
+                    <a href="visa_package.php" class="nav-item nav-link">Visa Package</a>
+                    <a href="testimonial.php" class="nav-item nav-link">Testimonial</a>
+                    <a href="contact.php" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">Get A Quote</a>
+                <a href="index.php" class="btn btn-primary py-2 px-4 d-none d-lg-block">Passport Check</a>
             </div>
         </nav>
     </div>
     <!-- Navbar End -->
 
 
-    <!-- Header Start -->
-    <div class="jumbotron jumbotron-fluid mb-5">
-        <div class="container text-center py-5">
-            <h1 class="text-primary mb-4">Safe & Faster</h1>
-            <h1 class="text-white display-3 mb-5">Logistics Services</h1>
-            <div class="mx-auto" style="width: 100%; max-width: 600px;">
-                <div class="input-group">
-                    <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Tracking Id">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary px-3">Track & Trace</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Header End -->
-
+ 
  
