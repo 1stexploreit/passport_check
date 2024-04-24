@@ -1,18 +1,18 @@
 <?php include ('session.php'); 
 	if(!empty($_POST["save"])) {
 	    
-		$itemCount = count($_POST["location"]);
+		$itemCount = count($_POST["status"]);
 		$itemValues=0;
 		
-		$query = "INSERT INTO tbl_location (location) VALUES ";
+		$query = "INSERT INTO tbl_status (status) VALUES ";
 		$queryValue = "";
 		for($i=0;$i<$itemCount;$i++) {
-			if(!empty($_POST["location"][$i])) {
+			if(!empty($_POST["status"][$i])) {
 				$itemValues++;
 				if($queryValue!="") {
 					$queryValue .= ",";
 				}
-				$queryValue .= "('" . $_POST["location"][$i] . "')";
+				$queryValue .= "('" . $_POST["status"][$i] . "')";
 			}
 		}
 		$query = $query.$queryValue;
@@ -22,7 +22,7 @@
 			
 				echo ("<script LANGUAGE='JavaScript'>
 				window.alert('Succesfully Saved');
-				window.location.href='list_location.php';
+				window.status.href='list_status.php';
 				</script>");
 		}
 	}
@@ -35,10 +35,10 @@
 <div class="mt-3 mb-3 page-title">
    <div class="row">
       <div class="col-md-10 my-auto">
-         Location <i class="fas fa-angle-right"></i> Add Location
+         Status <i class="fas fa-angle-right"></i> Add Status
       </div>
       <div class="col-md-2 text-right">
-         <a href="list_location.php" class="btn btn-outline-primary"><i class="fas fa-folder-open"></i> Location List</a>
+         <a href="list_status.php" class="btn btn-outline-primary"><i class="fas fa-folder-open"></i> Status List</a>
       </div>
    </div>
 </div>
@@ -50,7 +50,7 @@
                <a  class="btn btn-light btn-blcok btn-sm" name="del_item" onClick="deleteRow();"> <i class="fas fa-trash "></i>  </a> 
             </div>
             <div class="col-md-4">
-               <label>Location</label>
+               <label>Status</label>
             </div>
             <div class="col-md-1"> </div>
          </div>
@@ -61,7 +61,7 @@
                      <input type="checkbox" class="checkmark text-center add" name="item_index[]" >
                   </div>
                   <div class="col-md-4">
-                     <input class="form-control add" type="text" name="location[]">
+                     <input class="form-control add" type="text" name="status[]">
                   </div>
                   <div class="col-md-1">
                      <div class="col-md-1"> <span class="instl btn btn-outline-primary "><i class="fas fa-plus "></i> </span> </div>
