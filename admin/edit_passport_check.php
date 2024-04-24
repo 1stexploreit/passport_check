@@ -37,7 +37,7 @@
 
 	}
 	
-		$sql= mysqli_query($conn,"SELECT tbl_passport_check * FROM tbl_passport_check
+		$sql= mysqli_query($conn,"SELECT * from tbl_passport_check
 				WHERE tbl_passport_check.id='$get_id' ");
     $row = mysqli_fetch_assoc($sql);
 	///Header

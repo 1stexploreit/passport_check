@@ -1,8 +1,6 @@
 <?php require_once("session.php");
 
-	   $sql = "SELECT tbl_passport_check.*, tbl_status.status
-				FROM tbl_passport_check
-				left join tbl_status on tbl_passport_check.status=tbl_status.id
+	   $sql = "SELECT * from tbl_passport_check
 				 ";
 	   $result = $conn->query($sql);	
       $counter = 0;
