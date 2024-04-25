@@ -2,7 +2,7 @@
 
 	$page_id = mysqli_real_escape_string($conn, $_GET['passport_no']); // Sanitize input
 	$sql = mysqli_prepare($conn, "SELECT * FROM tbl_passport_check WHERE pp_no = ?");
-	mysqli_stmt_bind_param($sql, "i", $page_id); // Assuming 'id' is an integer, adjust the type if necessary
+	mysqli_stmt_bind_param($sql, "s", $page_id); // Assuming 'id' is an integer, adjust the type if necessary
 	mysqli_stmt_execute($sql);
 	$result = mysqli_stmt_get_result($sql);
 	$row = mysqli_fetch_assoc($result);
