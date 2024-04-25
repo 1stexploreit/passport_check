@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="img/" href="../assets/img/logo.png">
-    <title> easy attendance 1.0 </title>
+    <title> Admin </title>
     <link href="../css/font-awesome.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/bootstrap4.min.css">
     <link rel='stylesheet' href='../assets/css/login.css'>
@@ -142,7 +142,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 				
 				<p class="copyright-text text-center text-secondary; mt-3">  &copy; 2024
-                    <a rel="nofollow" href="http://www.exploreit.com.bd">explore IT </a> All Right Reservd
+                    <a rel="nofollow" href="http://www.noorsoftbd"> NOORSOFT </a> All Right Reservd
                 </p>
 				
  
