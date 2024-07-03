@@ -65,10 +65,10 @@ tr:nth-child(even) {
     <td>:</td>
     <td><strong><?php echo $row['comment']; ?></strong></td>
   </tr>
-  <tr>
+  <tr class="<?php if(empty($row["attachment"])) {echo "d-none";}; ?>">
     <td nowrap="nowrap">Attechment</td>
     <td>:</td>
-    <td> <a href="../uploads/<?php echo $row['attachment']; ?>" style="font-weight: bold">  <i class="fa fa-paperclip" aria-hidden="true"></i> Attechment </a></td>
+    <td> <a href="../uploads/<?php echo $row['attachment']; ?>"  style="font-weight: bold">  <i class="fa fa-paperclip" aria-hidden="true"></i> Attechment </a></td>
   </tr>
 </table>
 

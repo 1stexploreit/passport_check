@@ -56,9 +56,9 @@
                   <td> <?php echo $row["status"]; ?> </td>                  
                   <td> <?php echo $row["comment"]; ?> </td>                  
                   <td  align="right" width="10%" nowrap>
-					<a class="btn btn-outline-info btn-sm" href="../uploads/<?php echo $row["attachment"] ?>" target="_blank"> <i class="fa fa-paperclip" aria-hidden="true"></i> Attechment </a>
-					<a class="btn btn-outline-success btn-sm" href="edit_passport_check.php?id=<?php echo $row["id"]; ?>"><i class="fa fa-edit"></i>  Edit </a>
-					<a data-appd="<?php echo $row['id'] ?>" class="btn btn-outline-danger btn-sm delete" href="#"><i class="fa fa-trash text-danger"> </i> Delete  </a>
+					<a class="btn btn-outline-info btn-sm <?php if(empty($row["attachment"])) {echo "d-none";}; ?>" href="../uploads/<?php echo $row["attachment"] ?>" target="_blank"> <i class="fa fa-paperclip" aria-hidden="true"></i>  </a>
+					<a class="btn btn-outline-success btn-sm" href="edit_passport_check.php?id=<?php echo $row["id"]; ?>"><i class="fa fa-edit"></i>   </a>
+					<a data-appd="<?php echo $row['id'] ?>" class="btn btn-outline-danger btn-sm delete " href="#"><i class="fa fa-trash text-danger"> </i>   </a>
                   </td>
                </tr>
                <?php

@@ -11,10 +11,13 @@
 	   $attachment ='attachment' . date('Y-m-d-H-i-s') . '_' . uniqid() . '.pdf';
 	   move_uploaded_file($_FILES["attachment"]["tmp_name"], "../uploads/" . $attachment); 
 	   
-	   
+	     if (!empty($_FILES['photo']['name'])) {
 		$sql = $conn->prepare("INSERT INTO tbl_passport_check (pp_no,pp_name,comment,status, attachment) VALUES (?,?,?,?,?)");
-		$sql->bind_param("sssss",$pp_no,$pp_name,$comment,$status,$attachment);
-
+		$sql->bind_param("sssss",$pp_no,$pp_name,$comment,$status,$attachment);		
+		 } else {
+		$sql = $conn->prepare("INSERT INTO tbl_passport_check (pp_no,pp_name,comment,status) VALUES (?,?,?,?)");
+		$sql->bind_param("ssss",$pp_no,$pp_name,$comment,$status);
+		 }
 		if ($sql->execute()) {
 		   
 			$car_id=$conn->insert_id;
